@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<div class="container">
+  <p>Choose a song:</p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>User</th>
+        <th>Plays</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for song in songs %}
+      <tr>
+        <td><a href="/song/{{song['ID']}}">{{song['Title']}}</a></td>
+        <td>{{song['User']}}</td>
+        <td>{{song['Plays']}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+{% endblock %}
